@@ -1,0 +1,63 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+x = seq(3.1, by = -0.1)
+y = seq(1, 70, length.out = 10)
+z = rep(c("petit", "grand"), time = c(10, 5))
+length(x)
+summary(x)
+head(x)
+tail(x)
+zf = factor(z, labels = c("petit", "grand"), order = TRUE)
+table(zf)
+as.numeric(zf)
+as.numeric(as.factor(x))
+as.numeric(as.character(as.factor(x)))
+m = paste(1:12, month.name, sep = "-")
+gsub("r", "R", m)
+```
+Les vecteurs :
+1.  Le vecteur x contient 22 elements, on peut obtenir cette information avec : length(x).
+2.  summary(x) nous donne les informations de min, premier quantil, la médiane, le mean, le 3ème quantil et le max.
+3.  head(x) permet d'afficher les 6 premières valeurs de x et tail les 6 dernières.
+5.  On obtient la table de contingence en utilisant table(zf).
+6.  Chaque type d'element est converti en numérique correspondant à ce type.
+7.  Converti le vecteur x de numéric à facteur, n'étant pas un vecteur contenant des facteur de base on obtient autant de numéric/facteur qu'il y a d'element. On peut utiliser "as.numeric(as.character(as.factor(x)))" pour retrouver le vecteur initial.
+
+```{r}
+M1 = matrix(1:20, ncol = 5)
+M2 = matrix(1:20, ncol = 5, byrow = TRUE)
+M3 = cbind(M2, c("1", "2", "3", "4"))
+dim(M3)
+nrow(M3)
+ncol(M3)
+M3 = apply(X = M3, MARGIN = 2, FUN = as.numeric)
+colMeans(M3)
+rowMeans(M3)
+
+
+```
+
+Les matrices :
+3.  On a ajouté une colonne contenant 1 2 3 4.
+4.  Les dimensions de la matrice sont 4 lignes 6 colonnes.
+5.  apply(X = M3, MARGIN = 2, FUN = as.numeric)  permet d'afficher la matrice avec un écart de 2 entre les colonnes et les valeurs en tant que numérique.
+6.  8.5  9.5 10.5 11.5 12.5  2.5
+    2.666667  7.000000 11.333333 15.666667
+    
+```{r}
+
+```
+Les listes
+
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
