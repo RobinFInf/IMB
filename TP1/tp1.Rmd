@@ -53,9 +53,15 @@ Les matrices :
     2.666667  7.000000 11.333333 15.666667
     
 ```{r}
-
+l = list(gp1 = 1:3, gp2 = 1:5, gp3 = 1:10)
+l$gp4 = 1:4
+lapply(l, FUN = sum)
+sapply(l, FUN = sum)
+sapply(l, FUN = function(x){sum(sqrt(x))})
+summary(l)
 ```
-Les listes
+Les listes :
+2.  l$gp4 = 1:4 ajoute un nouvel element à la liste.
 
 
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
