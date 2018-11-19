@@ -59,9 +59,16 @@ lapply(l, FUN = sum)
 sapply(l, FUN = sum)
 sapply(l, FUN = function(x){sum(sqrt(x))})
 summary(l)
+l[-2]
 ```
 Les listes :
 2.  l$gp4 = 1:4 ajoute un nouvel element à la liste.
+6.  summary(l) nous donnes la longeur des elements de la liste, leur classe et leur mode.
+
+```{r}
+
+```
+Data frames:
 
 
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
